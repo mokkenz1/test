@@ -4,23 +4,23 @@
 int main()
 {
   size_t M = 0, N = 0;
-  std::cin >> M >> N;
-  if (std::cin.fail())
+  std::cin >> M >> N; //вводим размеры матрицы
+  if (std::cin.fail()) //проверяем корректность введенных данных
   {
     return 1;
   }
-  int ** table = nullptr;
+  int ** table = nullptr; //создаем указатель для матрицу
   try
   {
-    table = createTable(M, N);
+    table = createTable(M, N); //вызываем функцию для создания матрицы
   }
   catch(const std::bad_alloc &e)
   {
     std::cerr << "Not enough memory\n";
     return 2;
   }
-  input(table, M, N);
-  output(table, M, N);
-  deleteTable(table, M);
+  input(table, M, N); //вызываем функцию для иницилизации матрицы
+  output(table, M, N); //вызываем функцию для вывода матрицы в консоль
+  deleteTable(table, M); //освобождаем память
   return 0;
 }
