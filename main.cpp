@@ -19,4 +19,8 @@ int main()
     std::cerr << "Not enough memory\n";
     return 2;
   }
+  input(table, M, N);
+  output(table, M, N);
+  deleteTable(table, M);
+  return 0;
 }
